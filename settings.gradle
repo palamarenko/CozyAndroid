@@ -1,0 +1,1 @@
+include ':app', ':cozy_android'
