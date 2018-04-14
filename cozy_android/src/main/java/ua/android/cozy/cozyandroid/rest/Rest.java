@@ -5,24 +5,21 @@ package ua.android.cozy.cozyandroid.rest;
  * 14.04.2018 10:44
  */
 
-public class Rest {
+public class Rest<T extends ApiGet> {
 
-    private ApiFactory apiFactory;
-    private Class<? extends ApiGet> apiGet;
+    private ApiFactory<T> apiFactory;
 
-    public Rest(ApiFactory apiFactory) {
+    public Rest(ApiFactory<T> apiFactory) {
         this.apiFactory = apiFactory;
-        this.apiGet = apiGet;
     }
 
-    public ApiGet get() {
+    public T get() {
         return apiFactory.getApiService();
     }
 
-    public ApiGet get(String baseUrl) {
+    public T get(String baseUrl) {
         return apiFactory.getApiService(baseUrl);
     }
-
 
 
     public void restartRest(){
