@@ -1,4 +1,4 @@
-package ua.android.cozy.cozyandroid.ui;
+package ua.android.cozy.cozyandroid.mvp.ui;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -24,6 +24,7 @@ public abstract class BaseFragment extends MvpAppCompatFragment implements BaseV
 
     private Unbinder unbinder;
     private View view;
+
 
     /**
      * @return fragments layout id
@@ -90,5 +91,15 @@ public abstract class BaseFragment extends MvpAppCompatFragment implements BaseV
     @Override
     public void showMessage(String text) {
         Toast.makeText(getContext(),text,Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
     }
 }

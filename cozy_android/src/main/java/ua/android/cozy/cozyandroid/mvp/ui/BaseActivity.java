@@ -1,4 +1,4 @@
-package ua.android.cozy.cozyandroid.ui;
+package ua.android.cozy.cozyandroid.mvp.ui;
 
 import android.view.View;
 import android.view.ViewGroup;
