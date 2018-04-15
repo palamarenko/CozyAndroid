@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ua.android.cozy.cozyandroid.recycler.base.BaseItem;
+import ua.android.cozy.cozyandroid.recycler.item.RecyclerItem;
 import ua.android.cozy.cozyandroid.recycler.base.BaseRecyclerAdapter;
 import ua.android.cozy.cozyandroid.recycler.base.DiffUtilsBase;
 import ua.android.cozy.cozyandroid.recycler.holder.BaseViewHolder;
@@ -19,10 +19,10 @@ import ua.android.cozy.cozyandroid.recycler.holder.BaseViewHolder;
  * 31.03.2018 12:43
  * <p>
  * ItemRecyclerAdapter use when your need create two or more different types of viewHolder
- * Use BaseItem for get viewType and model
+ * Use RecyclerItem for get viewType and model
  */
 
-public abstract class ItemRecyclerAdapter<T extends BaseItem> extends RecyclerView.Adapter<BaseViewHolder> implements BaseRecyclerAdapter<T> {
+public abstract class ItemRecyclerAdapter<T extends RecyclerItem> extends RecyclerView.Adapter<BaseViewHolder> implements BaseRecyclerAdapter<T> {
 
     private final List<T> list = new ArrayList<>();
 
