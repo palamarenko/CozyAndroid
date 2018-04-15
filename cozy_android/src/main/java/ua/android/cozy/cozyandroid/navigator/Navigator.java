@@ -1,5 +1,6 @@
 package ua.android.cozy.cozyandroid.navigator;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -30,11 +31,13 @@ public class Navigator {
     }
 
 
+    public void showDialog(DialogFragment dialog){
+        dialog.show(fragmentManager,"");
+    }
+
     public void replaceFragment(Fragment fragment) {
         replaceFragment(fragment, true);
     }
-
-
     public void replaceFragment(Fragment fragment, boolean addToBackStack) {
         Completable.fromAction(() -> {
 
@@ -45,10 +48,9 @@ public class Navigator {
             if (addToBackStack) {
                 ft.addToBackStack("");
             }
-            ft.commit();
+            ft.commitAllowingStateLoss();
 
         }).subscribe(() -> {}, throwable -> {});
-
     }
 
 }
