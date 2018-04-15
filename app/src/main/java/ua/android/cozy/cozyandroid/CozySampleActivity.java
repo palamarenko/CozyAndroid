@@ -1,13 +1,15 @@
 package ua.android.cozy.cozyandroid;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CozySampleActivity extends AppCompatActivity {
+import ua.android.cozy.cozyandroid.mvp.ui.NavigateActivity;
+
+public class CozySampleActivity extends NavigateActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        simpleInit();
+        getNavigator().replaceFragment(TestFragment.newInstance());
     }
 }

@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
+import com.arellomobile.mvp.presenter.ProvidePresenter;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import ua.android.cozy.cozyandroid.mvp.BasePresenter;
 import ua.android.cozy.cozyandroid.mvp.BaseView;
 import ua.android.cozy.cozyandroid.navigator.Navigator;
 
@@ -41,10 +43,10 @@ public abstract class BaseFragment extends MvpAppCompatFragment implements BaseV
 
     /**
      * This method call when fragment view again
-     *
      */
 
-    public void reloadScreen() {}
+    public void reloadScreen() {
+    }
 
 
     @Override
@@ -60,8 +62,6 @@ public abstract class BaseFragment extends MvpAppCompatFragment implements BaseV
         return view;
     }
 
-
-
     /**
      * get FragmentNavigator from Activity
      */
@@ -75,6 +75,23 @@ public abstract class BaseFragment extends MvpAppCompatFragment implements BaseV
         }
     }
 
+    public BaseFragment setArgumentString(String key, String value) {
+        if (getArguments() == null) {
+            setArguments(new Bundle());
+        }
+
+        getArguments().putString(key, value);
+        return this;
+    }
+
+    public String getArgumentString(String key) {
+        if (getArguments() != null) {
+            return getArguments().getString(key);
+        } else {
+            return null;
+        }
+    }
+
 
     @Override
     public void onDestroy() {
@@ -85,12 +102,12 @@ public abstract class BaseFragment extends MvpAppCompatFragment implements BaseV
 
     @Override
     public void showMessage(int id) {
-        Toast.makeText(getContext(),id,Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), id, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void showMessage(String text) {
-        Toast.makeText(getContext(),text,Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), text, Toast.LENGTH_LONG).show();
     }
 
     @Override

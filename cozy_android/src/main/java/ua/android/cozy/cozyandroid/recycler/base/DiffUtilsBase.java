@@ -1,5 +1,6 @@
 package ua.android.cozy.cozyandroid.recycler.base;
 
+import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class DiffUtilsBase extends DiffUtil.Callback {
     private List newList;
 
 
-    public DiffUtilsBase(List oldList, List newList) {
+    public DiffUtilsBase(@NonNull List oldList,@NonNull List newList) {
         this.oldList = oldList;
         this.newList = newList;
     }

@@ -28,7 +28,6 @@ android {
 
 }
 
-def daggerVersion = "2.7"
 def supportLibraryVersion = "27.1.1"
 def moxyVersion = "1.5.3"
 def butterKnifeVersion = "8.8.1"

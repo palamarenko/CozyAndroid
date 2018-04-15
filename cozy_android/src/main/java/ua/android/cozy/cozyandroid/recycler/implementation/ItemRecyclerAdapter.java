@@ -17,17 +17,18 @@ import ua.android.cozy.cozyandroid.recycler.holder.BaseViewHolder;
 /**
  * Created by Palamarenko Andrey on
  * 31.03.2018 12:43
- *
+ * <p>
  * ItemRecyclerAdapter use when your need create two or more different types of viewHolder
  * Use BaseItem for get viewType and model
  */
 
 public abstract class ItemRecyclerAdapter<T extends BaseItem> extends RecyclerView.Adapter<BaseViewHolder> implements BaseRecyclerAdapter<T> {
 
-    private List<T> list;
+    private final List<T> list = new ArrayList<>();
+
+    public ItemRecyclerAdapter() {}
 
     public ItemRecyclerAdapter(@Nullable List<T> list) {
-        this.list = new ArrayList<>();
         if (list != null) {
             this.list.addAll(list);
         }
@@ -55,7 +56,7 @@ public abstract class ItemRecyclerAdapter<T extends BaseItem> extends RecyclerVi
     }
 
     @Override
-    public void updateList(List<T> list) {
+    public void updateList(@Nullable List<T> list) {
         if (list != null) {
             DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new DiffUtilsBase(this.list, list));
             diffResult.dispatchUpdatesTo(this);
@@ -76,14 +77,17 @@ public abstract class ItemRecyclerAdapter<T extends BaseItem> extends RecyclerVi
 
     @Override
     public void removeItem(T t) {
-        this.list.remove(t);
-        notifyDataSetChanged();
+        if (t != null) {
+            this.list.remove(t);
+            notifyDataSetChanged();
+        }
+
     }
 
     @Override
     public void addItem(T t, int position) {
 
-        if (list.size() > position) {
+        if (list.size() > position && t != null) {
             this.list.add(position, t);
         }
     }
