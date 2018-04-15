@@ -1,10 +1,11 @@
 package ua.android.cozy.cozyandroid;
 
-import android.os.Bundle;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import ua.android.cozy.cozyandroid.mvp.ui.BaseFragment;
+import ua.android.cozy.cozyandroid.view.ShapeView;
 
 /**
  * Created by Palamarenko Andrey on
@@ -17,6 +18,8 @@ public class TestFragment extends BaseFragment {
     TextView textView;
     @BindView(R.id.text_2)
     TextView textView2;
+    @BindView(R.id.ShapeImageView)
+    ShapeView view;
 
 
 
@@ -37,5 +40,10 @@ public class TestFragment extends BaseFragment {
         textView.setText(getArgumentString("HELLO"));
         textView2.setText(getArgumentString("BAY"));
 
+    }
+
+    @OnClick(R.id.button)
+    public void click(){
+        view.setBorderWidth(50);
     }
 }

@@ -19,15 +19,29 @@
         android:layout_height="wrap_content" />
 
 
-    <ua.android.cozy.cozyandroid.view.CozyImageView
+
+
+
+    <ua.android.cozy.cozyandroid.view.ShapeView
+        android:id="@+id/ShapeImageView"
         android:layout_width="200dp"
-        android:src="@drawable/ic_android_black_24dp"
-        android:padding="10dp"
         app:back_shape="RoundRect"
-        android:layout_marginStart="20dp"
-        app:back_shape_color="@color/colorPrimary"
-        app:corners_radius="5dp"
+        app:gradient_direction="vertical"
+        android:layout_marginStart="30dp"
+
+        app:back_shape_border="true"
+        app:back_shape_border_width="2dp"
+        app:gradient_start_color="@android:color/holo_green_dark"
+        app:gradient_end_color="@android:color/holo_red_dark"
+        app:back_shape_color="#767676"
+        app:corners_radius="20dp"
         android:layout_height="200dp" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
 
 
 </LinearLayout>
