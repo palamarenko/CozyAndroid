@@ -24,12 +24,11 @@
 
     <ua.android.cozy.cozyandroid.view.ShapeView
         android:id="@+id/ShapeImageView"
-        android:layout_width="200dp"
-        app:back_shape="RoundRect"
+        android:layout_width="20dp"
+        app:back_shape="Triangle"
         app:gradient_direction="vertical"
         android:layout_marginStart="30dp"
 
-        app:back_shape_border="true"
         app:back_shape_border_width="2dp"
         app:gradient_start_color="@android:color/holo_green_dark"
         app:gradient_end_color="@android:color/holo_red_dark"

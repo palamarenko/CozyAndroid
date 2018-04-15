@@ -22,7 +22,7 @@ import ua.android.cozy.cozyandroid.R;
  * 15.04.2018 18:02
  * <p>
  * CozyImageView xml params:
- * back_shape: Circle, Rectangle, RoundRect (additional: corners_radius)
+ * back_shape: Circle, Rectangle, RoundRect, Triangle (additional: corners_radius)
  * back_shape_color: default back
  * back_shape_border: if true use border instead fill shape (additional:back_shape_border_width = default 3px)
  * gradient_direction - vertical and horizontal
@@ -95,6 +95,9 @@ public class ShapeView extends View {
             case 3:
                 float[] R = new float[]{radius, radius, radius, radius, radius, radius, radius, radius};
                 rectShape = new RoundRectShape(R, null, null);
+                break;
+            case 4:
+                rectShape = new TriangleShape();
                 break;
         }
         if (rectShape == null) {
