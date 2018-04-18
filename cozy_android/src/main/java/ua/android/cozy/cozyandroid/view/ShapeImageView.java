@@ -33,13 +33,11 @@ public class ShapeImageView extends android.support.v7.widget.AppCompatImageView
     public ShapeImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(attrs);
-
     }
 
     public ShapeImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(attrs);
-
     }
 
 
@@ -91,8 +89,8 @@ public class ShapeImageView extends android.support.v7.widget.AppCompatImageView
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        drawable.setW(w);
-        drawable.setH(h);
+        drawable.setWidth(w);
+        drawable.setHeight(h);
         super.onSizeChanged(w, h, oldw, oldh);
         setBackground(drawable.getDrawable());
     }

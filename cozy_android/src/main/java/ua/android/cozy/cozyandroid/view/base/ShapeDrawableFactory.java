@@ -7,8 +7,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
-import android.graphics.drawable.shapes.RectShape;
-import android.graphics.drawable.shapes.RoundRectShape;
+import android.graphics.drawable.shapes.Shape;
 
 /**
  * Created by Palamarenko Andrey on
@@ -20,8 +19,8 @@ public class ShapeDrawableFactory {
         OVAL, RECTANGLE, ROUND_RECT, TRIANGLE
     }
 
-    private int w = 100;
-    private int h = 100;
+    private int width = 100;
+    private int height = 100;
     private SHAPE shape = SHAPE.RECTANGLE;
     private String colorBack = "#000000";
     private String startColor = null;
@@ -46,19 +45,18 @@ public class ShapeDrawableFactory {
         return shapeDrawable;
     }
 
-    private RectShape getShape(SHAPE shape, int radius) {
+    private Shape getShape(SHAPE shape, int radius) {
         if (shape == null) {
             return new RectShape();
         }
 
         switch (shape) {
             case OVAL:
-                return new OvalShape();
+                return new CircleShape();
             case RECTANGLE:
                 return new RectShape();
             case ROUND_RECT:
-                float[] R = new float[]{radius, radius, radius, radius, radius, radius, radius, radius};
-                return new RoundRectShape(R, null, null);
+                return new RoundRectShape(radius);
             case TRIANGLE:
                 return new TriangleShape();
             default:
@@ -73,30 +71,30 @@ public class ShapeDrawableFactory {
             int colorRes = colorBack == null ? Color.BLACK : Color.parseColor(colorBack);
             paint.setColor(colorRes);
         } else {
-            int startX = gradientDirection == 0 ? 0 : w / 2;
-            int startY = gradientDirection == 0 ? h / 2 : 0;
-            int endX = gradientDirection == 0 ? w : w / 2;
-            int endY = gradientDirection == 0 ? h / 2 : h;
+            int startX = gradientDirection == 0 ? 0 : width / 2;
+            int startY = gradientDirection == 0 ? height / 2 : 0;
+            int endX = gradientDirection == 0 ? width : width / 2;
+            int endY = gradientDirection == 0 ? height / 2 : height;
 
             LinearGradient shader = new LinearGradient(startX, startY, endX, endY, Color.parseColor(startColor), Color.parseColor(endColor), Shader.TileMode.CLAMP);
             paint.setShader(shader);
         }
     }
 
-    public int getW() {
-        return w;
+    public int getWidth() {
+        return width;
     }
 
-    public void setW(int w) {
-        this.w = w;
+    public void setWidth(int width) {
+        this.width = width;
     }
 
-    public int getH() {
-        return h;
+    public int getHeight() {
+        return height;
     }
 
-    public void setH(int h) {
-        this.h = h;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public SHAPE getShape() {

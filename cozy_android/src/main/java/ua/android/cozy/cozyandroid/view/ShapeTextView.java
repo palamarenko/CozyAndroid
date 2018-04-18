@@ -3,7 +3,6 @@ package ua.android.cozy.cozyandroid.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 import ua.android.cozy.cozyandroid.R;
 import ua.android.cozy.cozyandroid.view.base.ShapeDrawableFactory;
@@ -37,12 +36,12 @@ public class ShapeTextView extends android.support.v7.widget.AppCompatTextView {
     }
 
 
-    private void init(AttributeSet attrs){
-        if(attrs!=null){
+    private void init(AttributeSet attrs) {
+        if (attrs != null) {
             TypedArray arr = getContext().obtainStyledAttributes(attrs, R.styleable.ShapeTextView);
             drawable = getViewShapeDrawable(arr);
             arr.recycle();
-        }else {
+        } else {
             drawable = new ShapeDrawableFactory();
         }
     }
@@ -52,27 +51,27 @@ public class ShapeTextView extends android.support.v7.widget.AppCompatTextView {
         ShapeDrawableFactory drawable = new ShapeDrawableFactory();
         drawable.setShape(ShapeDrawableFactory.SHAPE.values()[arr.getInt(R.styleable.ShapeTextView_back_shape, 0)]);
         String colorBack = arr.getString(R.styleable.ShapeTextView_back_shape_color);
-        if(colorBack!=null){
+        if (colorBack != null) {
             drawable.setColorBack(colorBack);
         }
         String startColor = arr.getString(R.styleable.ShapeTextView_gradient_start_color);
-        if(startColor!=null){
+        if (startColor != null) {
             drawable.setStartColor(startColor);
         }
         String endColor = arr.getString(R.styleable.ShapeTextView_gradient_end_color);
-        if(endColor != null){
+        if (endColor != null) {
             drawable.setEndColor(endColor);
         }
         int radius = arr.getDimensionPixelSize(R.styleable.ShapeTextView_corners_radius, -1);
 
-        if(radius >= 0){
+        if (radius >= 0) {
             drawable.setRadius(radius);
         }
         boolean border = arr.getBoolean(R.styleable.ShapeTextView_back_shape_border, false);
         drawable.setBorder(border);
 
         int borderWidth = arr.getDimensionPixelOffset(R.styleable.ShapeTextView_back_shape_border_width, 0);
-        if(borderWidth > 0){
+        if (borderWidth > 0) {
             drawable.setBorderWidth(borderWidth);
         }
         int gradientDirection = arr.getInt(R.styleable.ShapeTextView_gradient_direction, 0);
@@ -83,8 +82,8 @@ public class ShapeTextView extends android.support.v7.widget.AppCompatTextView {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        drawable.setW(w);
-        drawable.setH(h);
+        drawable.setWidth(w);
+        drawable.setHeight(h);
         super.onSizeChanged(w, h, oldw, oldh);
         setBackground(drawable.getDrawable());
     }
