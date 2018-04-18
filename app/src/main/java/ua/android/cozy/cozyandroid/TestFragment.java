@@ -5,7 +5,8 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.OnClick;
 import ua.android.cozy.cozyandroid.mvp.ui.BaseFragment;
-import ua.android.cozy.cozyandroid.view.ShapeView;
+import ua.android.cozy.cozyandroid.view.ShapeImageView;
+import ua.android.cozy.cozyandroid.view.ShapeTextView;
 
 /**
  * Created by Palamarenko Andrey on
@@ -19,7 +20,7 @@ public class TestFragment extends BaseFragment {
     @BindView(R.id.text_2)
     TextView textView2;
     @BindView(R.id.ShapeImageView)
-    ShapeView view;
+    ShapeTextView view;
 
 
 
@@ -39,11 +40,8 @@ public class TestFragment extends BaseFragment {
     protected void onCreate() {
         textView.setText(getArgumentString("HELLO"));
         textView2.setText(getArgumentString("BAY"));
-
     }
 
     @OnClick(R.id.button)
-    public void click(){
-        view.setBorderWidth(50);
-    }
+    public void click(){}
 }

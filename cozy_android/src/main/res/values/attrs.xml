@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ShapeView">
+
+    <declare-styleable name="ShapeImageView">
         <attr name="back_shape" format="enum">
-            <enum name="None" value="0"/>
-            <enum name="Circle" value="1"/>
-            <enum name="Rectangle" value="2"/>
-            <enum name="RoundRect" value="3"/>
-            <enum name="Triangle" value="4"/>
+            <enum name="Circle" value="0"/>
+            <enum name="Rectangle" value="1"/>
+            <enum name="RoundRect" value="2"/>
+            <enum name="Triangle" value="3"/>
         </attr>
         <attr name="corners_radius" format="dimension"/>
         <attr name="back_shape_color" format="color" />
@@ -18,5 +18,17 @@
             <enum name="horizontal" value="0"/>
             <enum name="vertical" value="1"/>
         </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="ShapeTextView">
+        <attr name="back_shape"/>
+        <attr name="corners_radius"/>
+        <attr name="back_shape_color"/>
+        <attr name="back_shape_border"/>
+        <attr name="back_shape_border_width"/>
+        <attr name="gradient_start_color"/>
+        <attr name="gradient_end_color"/>
+        <attr name="gradient_direction" />
     </declare-styleable>
 </resources>
