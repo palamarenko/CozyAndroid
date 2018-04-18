@@ -18,8 +18,8 @@ public class TriangleShape extends RectShape {
     @Override
     public void draw(Canvas canvas, Paint paint) {
         float margin = paint.getStrokeWidth() / 2;
-        RectF rectF = new RectF(rect().left, rect().top + margin, rect().right, rect().bottom - margin);
-        path.moveTo(rectF.left, rectF.bottom - margin);
+        RectF rectF = new RectF(rect().left + margin, rect().top + margin, rect().right - margin, rect().bottom - margin);
+        path.moveTo(rectF.left, rectF.bottom + margin);
         path.lineTo(rectF.centerX(), rectF.top);
         path.lineTo(rectF.right, rectF.bottom);
         path.lineTo(rectF.left, rectF.bottom);

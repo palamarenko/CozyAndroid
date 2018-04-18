@@ -14,9 +14,7 @@ import ua.android.cozy.cozyandroid.view.base.ShapeDrawableFactory;
 
 public class ShapeTextView extends android.support.v7.widget.AppCompatTextView {
 
-
     private ShapeDrawableFactory drawable;
-
 
     public ShapeTextView(Context context) {
         super(context);

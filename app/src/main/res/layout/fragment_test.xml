@@ -1,41 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <TextView
-        android:layout_width="wrap_content"
         android:id="@+id/text"
-        android:textSize="40sp"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp" />
 
     <TextView
-        android:layout_width="wrap_content"
         android:id="@+id/text_2"
-        android:textSize="40sp"
-        android:layout_height="wrap_content" />
-
-
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp" />
 
 
     <ua.android.cozy.cozyandroid.view.ShapeTextView
         android:id="@+id/ShapeImageView"
         android:layout_width="200dp"
-        app:back_shape="Circle"
-        app:gradient_direction="vertical"
+        android:layout_height="200dp"
         android:layout_marginStart="40dp"
-        app:back_shape_border="true"
-        android:text="Hello"
         android:gravity="center"
-        app:srcCompat="@drawable/ic_android_black_24dp"
-        app:back_shape_border_width="30dp"
-        app:back_shape_color="#767676"
-        app:corners_radius="20dp"
-        android:layout_height="200dp" />
+        android:text="Hello"
+        app:back_shape="Triangle"
+        app:back_shape_border="true"
+        app:back_shape_border_width="5dp"
+        app:gradient_direction="horizontal"
+        app:gradient_end_color="@color/colorPrimaryDark"
+        app:gradient_start_color="@color/colorAccent"
+        app:srcCompat="@drawable/ic_android_black_24dp" />
 
 
     <Button

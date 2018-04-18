@@ -38,6 +38,7 @@ public class Navigator {
     public void replaceFragment(Fragment fragment) {
         replaceFragment(fragment, true);
     }
+
     public void replaceFragment(Fragment fragment, boolean addToBackStack) {
         Completable.fromAction(() -> {
 
