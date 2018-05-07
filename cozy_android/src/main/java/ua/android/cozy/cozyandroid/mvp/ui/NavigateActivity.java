@@ -1,5 +1,6 @@
 package ua.android.cozy.cozyandroid.mvp.ui;
 
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -25,5 +26,17 @@ public class NavigateActivity extends BaseActivity {
 
     public Navigator getNavigator() {
         return navigator;
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager manager = getNavigator().getFragmentManager();
+        int count = manager.getBackStackEntryCount();
+        if (count == 1) {
+            finish();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
