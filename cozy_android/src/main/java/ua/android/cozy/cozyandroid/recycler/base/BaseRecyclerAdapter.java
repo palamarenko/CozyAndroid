@@ -30,6 +30,8 @@ public interface BaseRecyclerAdapter<T> {
 
 
     Object getDataFromAdapter();
+    void setDataForAdapter();
+
 
     RecyclerView.Adapter getRealAdapter();
 }

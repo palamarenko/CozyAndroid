@@ -106,4 +106,8 @@ public abstract class ItemRecyclerAdapter<T extends RecyclerItem> extends Recycl
     public Object getDataFromAdapter() {
         return null;
     }
+
+    @Override
+    public void setDataForAdapter() {
+    }
 }
