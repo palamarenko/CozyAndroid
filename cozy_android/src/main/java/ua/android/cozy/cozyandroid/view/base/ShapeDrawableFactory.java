@@ -21,9 +21,9 @@ public class ShapeDrawableFactory {
     private int width = 100;
     private int height = 100;
     private SHAPE shape = SHAPE.RECTANGLE;
-    private String colorBack = "#000000";
-    private String startColor = null;
-    private String endColor = null;
+    private Integer colorBack = Color.BLACK;
+    private Integer startColor = null;
+    private Integer endColor = null;
     private int gradientDirection = 0;
     private int radius = 10;
     private boolean border = false;
@@ -67,7 +67,7 @@ public class ShapeDrawableFactory {
     private void setColor(Paint paint) {
 
         if (startColor == null || endColor == null) {
-            int colorRes = colorBack == null ? Color.BLACK : Color.parseColor(colorBack);
+            int colorRes = colorBack == null ? Color.BLACK : colorBack;
             paint.setColor(colorRes);
         } else {
             int startX = gradientDirection == 0 ? 0 : width / 2;
@@ -75,7 +75,7 @@ public class ShapeDrawableFactory {
             int endX = gradientDirection == 0 ? width : width / 2;
             int endY = gradientDirection == 0 ? height / 2 : height;
 
-            LinearGradient shader = new LinearGradient(startX, startY, endX, endY, Color.parseColor(startColor), Color.parseColor(endColor), Shader.TileMode.CLAMP);
+            LinearGradient shader = new LinearGradient(startX, startY, endX, endY, startColor, endColor, Shader.TileMode.CLAMP);
             paint.setShader(shader);
         }
     }
@@ -104,27 +104,27 @@ public class ShapeDrawableFactory {
         this.shape = shape;
     }
 
-    public String getColorBack() {
+    public Integer getColorBack() {
         return colorBack;
     }
 
-    public void setColorBack(String colorBack) {
+    public void setColorBack(Integer colorBack) {
         this.colorBack = colorBack;
     }
 
-    public String getStartColor() {
+    public Integer getStartColor() {
         return startColor;
     }
 
-    public void setStartColor(String startColor) {
+    public void setStartColor(Integer startColor) {
         this.startColor = startColor;
     }
 
-    public String getEndColor() {
+    public Integer getEndColor() {
         return endColor;
     }
 
-    public void setEndColor(String endColor) {
+    public void setEndColor(Integer endColor) {
         this.endColor = endColor;
     }
 

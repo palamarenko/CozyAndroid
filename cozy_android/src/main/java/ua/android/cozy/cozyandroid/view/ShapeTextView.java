@@ -2,6 +2,10 @@ package ua.android.cozy.cozyandroid.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 
 import ua.android.cozy.cozyandroid.R;
@@ -50,15 +54,15 @@ public class ShapeTextView extends android.support.v7.widget.AppCompatTextView {
         drawable.setShape(ShapeDrawableFactory.SHAPE.values()[arr.getInt(R.styleable.ShapeTextView_back_shape, 0)]);
         String colorBack = arr.getString(R.styleable.ShapeTextView_back_shape_color);
         if (colorBack != null) {
-            drawable.setColorBack(colorBack);
+            drawable.setColorBack(Color.parseColor(colorBack));
         }
         String startColor = arr.getString(R.styleable.ShapeTextView_gradient_start_color);
         if (startColor != null) {
-            drawable.setStartColor(startColor);
+            drawable.setStartColor(Color.parseColor(startColor));
         }
         String endColor = arr.getString(R.styleable.ShapeTextView_gradient_end_color);
         if (endColor != null) {
-            drawable.setEndColor(endColor);
+            drawable.setEndColor(Color.parseColor(endColor));
         }
         int radius = arr.getDimensionPixelSize(R.styleable.ShapeTextView_corners_radius, -1);
 
@@ -75,6 +79,37 @@ public class ShapeTextView extends android.support.v7.widget.AppCompatTextView {
         int gradientDirection = arr.getInt(R.styleable.ShapeTextView_gradient_direction, 0);
         drawable.setGradientDirection(gradientDirection);
         return drawable;
+    }
+
+
+    public void setShape(ShapeDrawableFactory.SHAPE shape) {
+        drawable.setShape(shape);
+        setBackground(drawable.getDrawable());
+    }
+
+    public void setShapeColor(@ColorInt int color) {
+        drawable.setColorBack(color);
+        setBackground(drawable.getDrawable());
+    }
+
+    public void setShapeColorFromRes(@ColorRes int color) {
+        drawable.setColorBack(ContextCompat.getColor(getContext(), color));
+        drawable.setStartColor(null);
+        drawable.setEndColor(null);
+        setBackground(drawable.getDrawable());
+    }
+
+
+    public void setShapeGradient(@ColorInt int colorStart, @ColorInt int colorEnd) {
+        drawable.setStartColor(colorStart);
+        drawable.setEndColor(colorEnd);
+        setBackground(drawable.getDrawable());
+    }
+
+
+    public void setBorder(boolean needBorder) {
+        drawable.setBorder(needBorder);
+        setBackground(drawable.getDrawable());
     }
 
 

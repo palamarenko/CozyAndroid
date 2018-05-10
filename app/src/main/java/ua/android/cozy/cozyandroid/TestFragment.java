@@ -7,6 +7,7 @@ import butterknife.OnClick;
 import ua.android.cozy.cozyandroid.mvp.ui.BaseFragment;
 import ua.android.cozy.cozyandroid.view.ShapeImageView;
 import ua.android.cozy.cozyandroid.view.ShapeTextView;
+import ua.android.cozy.cozyandroid.view.base.ShapeDrawableFactory;
 
 /**
  * Created by Palamarenko Andrey on
@@ -43,5 +44,9 @@ public class TestFragment extends BaseFragment {
     }
 
     @OnClick(R.id.button)
-    public void click(){}
+    public void click(){
+        view.setShape(ShapeDrawableFactory.SHAPE.RECTANGLE);
+        view.setBorder(false);
+        view.setShapeColorFromRes(R.color.cardview_shadow_end_color);
+    }
 }
