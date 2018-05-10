@@ -96,4 +96,14 @@ public abstract class ItemRecyclerAdapter<T extends RecyclerItem> extends Recycl
     public List<T> getList() {
         return list;
     }
+
+    @Override
+    public RecyclerView.Adapter getRealAdapter() {
+        return this;
+    }
+
+    @Override
+    public Object getDataFromAdapter() {
+        return null;
+    }
 }

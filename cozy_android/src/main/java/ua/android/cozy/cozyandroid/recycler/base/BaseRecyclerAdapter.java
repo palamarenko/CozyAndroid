@@ -1,6 +1,7 @@
 package ua.android.cozy.cozyandroid.recycler.base;
 
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
 
@@ -26,4 +27,9 @@ public interface BaseRecyclerAdapter<T> {
     List<T> getList();
 
     int getItemCount();
+
+
+    Object getDataFromAdapter();
+
+    RecyclerView.Adapter getRealAdapter();
 }
