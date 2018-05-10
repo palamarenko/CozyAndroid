@@ -108,6 +108,6 @@ public abstract class ItemRecyclerAdapter<T extends RecyclerItem> extends Recycl
     }
 
     @Override
-    public void setDataForAdapter() {
+    public void setDataForAdapter(Object o) {
     }
 }

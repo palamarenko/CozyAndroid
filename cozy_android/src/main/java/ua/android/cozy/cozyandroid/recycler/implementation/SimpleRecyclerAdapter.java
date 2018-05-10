@@ -115,7 +115,7 @@ public abstract class SimpleRecyclerAdapter<T> extends RecyclerView.Adapter<Base
     }
 
     @Override
-    public void setDataForAdapter() {
+    public void setDataForAdapter(Object o) {
     }
 
 
