@@ -6,39 +6,9 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40sp" />
-
-    <TextView
-        android:id="@+id/text_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40sp" />
-
-
-    <ua.android.cozy.cozyandroid.view.ShapeTextView
-        android:id="@+id/ShapeImageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="40dp"
-        android:gravity="center"
-        android:text="Hello"
-        app:back_shape="Triangle"
-        app:back_shape_border="true"
-        app:back_shape_border_width="5dp"
-        app:gradient_direction="horizontal"
-        app:gradient_end_color="@color/colorPrimaryDark"
-        app:gradient_start_color="@color/colorAccent"
-        app:srcCompat="@drawable/ic_android_black_24dp" />
-
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
-
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/recycler"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 
 </LinearLayout>

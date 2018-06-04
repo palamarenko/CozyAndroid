@@ -12,7 +12,8 @@ import io.reactivex.subjects.PublishSubject;
  */
 
 public class CozyView {
-    public static Single<View> getViewWithSize(View view) {
+
+    private static Single<View> getViewWithSize(View view) {
         PublishSubject<View> publishSubject = PublishSubject.create();
         ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
