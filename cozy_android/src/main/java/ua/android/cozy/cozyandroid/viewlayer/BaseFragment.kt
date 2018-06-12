@@ -15,7 +15,9 @@ abstract class BaseFragment<T : BaseViewModel> : Fragment() {
 
     lateinit var modelClass: Class<T>
 
-    abstract val layout : Int
+    abstract val layout: Int
+
+    private var fragmentView: View? = null
 
     abstract fun initViewModel(): KClass<T>
 
@@ -27,13 +29,14 @@ abstract class BaseFragment<T : BaseViewModel> : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        takeViewModel().toast.observe(this, Observer { mes -> Toast.makeText(context, mes, Toast.LENGTH_LONG).show() })
-        val view = inflater.inflate(layout, null)
-        return view
+        if (fragmentView == null) {
+            fragmentView = inflater.inflate(layout, null)
+        }
+        return fragmentView
     }
 
 
-    fun setArgumentString(key: String, value: String) : BaseFragment<T>  {
+    fun setArgumentString(key: String, value: String): BaseFragment<T> {
         if (arguments == null) {
             arguments = Bundle()
         }
@@ -43,8 +46,8 @@ abstract class BaseFragment<T : BaseViewModel> : Fragment() {
         return this
     }
 
-    fun getArgumentString(key: String): String  {
-       return arguments?.getString(key) ?: ""
+    fun getArgumentString(key: String): String {
+        return arguments?.getString(key) ?: ""
     }
 
 

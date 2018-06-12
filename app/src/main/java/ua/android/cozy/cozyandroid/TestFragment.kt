@@ -2,14 +2,12 @@ package ua.android.cozy.cozyandroid
 
 
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_test.*
 import ua.android.cozy.cozyandroid.recycler.implementation.SuperSimpleRecyclerAdapter
 import ua.android.cozy.cozyandroid.viewlayer.BaseFragment
-import kotlin.collections.ArrayList
 import kotlin.reflect.KClass
 
 /**

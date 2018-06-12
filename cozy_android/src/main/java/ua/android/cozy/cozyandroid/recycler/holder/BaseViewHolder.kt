@@ -14,7 +14,7 @@ import ua.android.cozy.cozyandroid.utils.Utils
  * 31.03.2018 12:46
  */
 
-abstract class BaseViewHolder<T>(val parent: ViewGroup, @LayoutRes id: Int = 0) : RecyclerView.ViewHolder(View.inflate(parent.context, id, null)) {
+abstract class BaseViewHolder<T>(val parent: ViewGroup, @LayoutRes id: Int = 0) : RecyclerView.ViewHolder(View.inflate(parent.context, id, parent)) {
 
     protected val context: Context = itemView.context
     private val utils: Utils
