@@ -36,7 +36,6 @@ dependencies {
     def retrofitLibraryVersion = "2.3.0"
     def okHttpVersion = "3.8.1"
     def roomVersion = '1.0.0'
-    def glideVersion = '4.6.1'
     def daggerVersion = '2.15'
     def extensionsVersion = '1.1.0'
 
@@ -57,7 +56,6 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$extensionsVersion"
     implementation "android.arch.lifecycle:reactivestreams:$extensionsVersion"
 
-    implementation "com.github.bumptech.glide:glide:$glideVersion"
     implementation "android.arch.persistence.room:rxjava2:$roomVersion"
     implementation "android.arch.persistence.room:runtime:$roomVersion"
 
@@ -65,7 +63,6 @@ dependencies {
 
 
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-    kapt "com.github.bumptech.glide:compiler:$glideVersion"
     kapt "android.arch.persistence.room:compiler:$roomVersion"
 
     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
